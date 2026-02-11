@@ -2,8 +2,8 @@ django==4.2.15
 django-mathfilters
 django-mdmail
 django-model-utils
-django-registration-redux
 django-jsonview
+django-allauth==65.14.1
 lxml
 python-dateutil
 pytz
