@@ -118,7 +118,11 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 
-    'registration',
+    'django.contrib.sites',
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'mathfilters',
     'jsonview',
 
@@ -128,6 +132,16 @@ INSTALLED_APPS = (
     'member',
     'message',
 )
+
+SITE_ID = 1
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+# Keep legacy behaviour.
+ACCOUNT_LOGOUT_REDIRECT_URL = '/accounts/login/'
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
